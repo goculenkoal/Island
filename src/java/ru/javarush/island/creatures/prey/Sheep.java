@@ -1,7 +1,6 @@
 package ru.javarush.island.creatures.prey;
 
-import ru.javarush.island.Population;
-import ru.javarush.island.creatures.Prey;
+import ru.javarush.island.creatures.Population;
 
 public class Sheep extends Prey {
 

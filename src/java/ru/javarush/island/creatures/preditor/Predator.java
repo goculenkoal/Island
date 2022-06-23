@@ -1,7 +1,7 @@
-package ru.javarush.island.creatures;
+package ru.javarush.island.creatures.preditor;
 
-import ru.javarush.island.Cell;
-import ru.javarush.island.creatures.preditor.Wolf;
+import ru.javarush.island.island.Cell;
+import ru.javarush.island.creatures.Animal;
 
 import java.util.List;
 import java.util.Map;

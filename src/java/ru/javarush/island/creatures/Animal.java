@@ -1,11 +1,9 @@
 package ru.javarush.island.creatures;
 
-import ru.javarush.island.Cell;
-import ru.javarush.island.Island;
-import ru.javarush.island.Population;
+import ru.javarush.island.island.Cell;
+import ru.javarush.island.island.Island;
 
 import java.util.Map;
-import java.util.Random;
 
 public abstract class Animal extends Island {
 
@@ -86,7 +84,7 @@ public abstract class Animal extends Island {
         return moveSpeed;
     }
 
-    public void setMoved(boolean moved) {
+    public void setIsMoved(boolean moved) {
         isMoved = moved;
     }
 
@@ -104,6 +102,7 @@ public abstract class Animal extends Island {
 
     public abstract void eat(Cell cell);
     public abstract void eatTest();
+
 
 }
 

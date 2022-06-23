@@ -1,4 +1,4 @@
-package ru.javarush.island;
+package ru.javarush.island.core;
 
 import java.util.HashMap;
 import java.util.Map;

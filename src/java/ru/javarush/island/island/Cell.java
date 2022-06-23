@@ -1,10 +1,7 @@
-package ru.javarush.island;
+package ru.javarush.island.island;
 
 import ru.javarush.island.creatures.Animal;
-import ru.javarush.island.creatures.Predator;
-import ru.javarush.island.creatures.Prey;
 import ru.javarush.island.creatures.flora.Plant;
-import ru.javarush.island.creatures.preditor.Wolf;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -56,6 +53,10 @@ public class Cell {
         return allAnimalInCell;
     }
 
+    public void resetWalkStatus(Cell cell) {
+        cell.getAllAnimalInCell().forEach(animal -> animal.setIsMoved(false));
+    }
+
 
     /**
      * Считаем количество животных в ячейке
@@ -63,8 +64,6 @@ public class Cell {
      * @return количество особей в ячейке,если нет - возвращаем ноль.
      */
     public int getCountAnimalInCell(Animal animal) {
-        //System.out.println(animal.getClass().getSimpleName());
-
         Map<Object, Integer> collect = Stream.of(allAnimalInCell).flatMap(Collection::stream)
                 .filter(Objects::nonNull)
                 .collect(Collectors.toMap(Object::toString, e -> 1, Integer::sum));
@@ -75,12 +74,14 @@ public class Cell {
         }
     }
 
-    public void generatePlants(Cell cell) {
+    public void generatePlants() {
         Plant plant = new Plant();
         for (int k = 0; k < ThreadLocalRandom.current().nextInt(plant.getMaxOnCell() + 1); k++)
-            cell.getAllPlantInCell().add((plant));
+           allPlantInCell.add(plant);
 
     }
+
+
 
     @Override
     public String toString() {

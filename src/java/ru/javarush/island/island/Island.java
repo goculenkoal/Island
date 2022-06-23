@@ -1,17 +1,17 @@
-package ru.javarush.island;
+package ru.javarush.island.island;
 
 import ru.javarush.island.creatures.Animal;
-import ru.javarush.island.creatures.flora.Plant;
+import ru.javarush.island.creatures.Population;
 import ru.javarush.island.creatures.preditor.Wolf;
 import ru.javarush.island.creatures.prey.Deer;
 import ru.javarush.island.creatures.prey.Sheep;
+import ru.javarush.island.island.Cell;
 
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Island extends Cell{
+public class Island extends Cell {
 
 
     /**
@@ -84,7 +84,7 @@ public class Island extends Cell{
         for (int x = 0; x < HEIGHT; x++) {
             for (int y = 0; y < WIDTH; y++) {
                 Cell cell = islandMap[x][y];
-                generatePlants(cell);
+                cell.generatePlants();
                 for (Population population : Population.values()) {
                     //if (!population.name().equals("PLANT")) { //Убираем планты
                     for (int i = 0; i < new Random().nextInt(population.getMaxPopulationOnCell() + 1); i++) {

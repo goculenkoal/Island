@@ -1,14 +1,21 @@
 package ru.javarush.island;
 
-import ru.javarush.island.creatures.Animal;
-import ru.javarush.island.creatures.preditor.Wolf;
-import ru.javarush.island.creatures.prey.Deer;
-import ru.javarush.island.creatures.prey.Sheep;
-
-import java.util.*;
+import ru.javarush.island.core.SimulateLifeActions;
+import ru.javarush.island.island.Island;
 
 public class Main {
     public static void main(String[] args) {
+        Island map = new Island();
+        SimulateLifeActions lifeActions = new SimulateLifeActions(map);
+        lifeActions.initialiseIsland();
+        lifeActions.run();
+
+
+
+
+
+
+
         //new LifeController().startGame();
 //        Map<String, Integer> menu1 = new HashMap<>();
 //        menu1.put("Sheep", 70);
@@ -77,23 +84,23 @@ public class Main {
 
 
         //Plant plant = new Plant();
-        System.out.println("Start to generate Island");
-        Island island = new Island();
-        island.builtIsland();
-        island.fillupd();
-        island.islandViewer();
-        MovementFauna movement = new MovementFauna(island);
-        ReproductionFauna reproductionFauna = new ReproductionFauna(island);
-        AnimalEating predatorEating = new AnimalEating(island);
-        // movement.doMove();
-        reproductionFauna.multiply();
-        //island.printIsland();
-        System.out.println();
-        island.islandViewer();
-        predatorEating.eatAllAnimals();
-        System.out.println();
-        island.islandViewer();
-        
+//        System.out.println("Start to generate Island");
+//        Island island = new Island();
+//        island.builtIsland();
+//        island.fillupd();
+//        island.islandViewer();
+//        MovementFauna movement = new MovementFauna(island);
+//        ReproductionFauna reproductionFauna = new ReproductionFauna(island);
+//        AnimalEating predatorEating = new AnimalEating(island);
+//        // movement.doMove();
+//        //reproductionFauna.multiply();
+//        //island.printIsland();
+//        System.out.println();
+//        island.islandViewer();
+//        predatorEating.eatAllAnimals();
+//        System.out.println();
+//        island.islandViewer();
+
 //
 //        System.out.println(plant.getMaxOnCell());
 //        System.out.println(plant);

@@ -1,13 +1,7 @@
 package ru.javarush.island.creatures.preditor;
 
-import ru.javarush.island.Population;
-import ru.javarush.island.Settings;
-import ru.javarush.island.creatures.Animal;
-import ru.javarush.island.creatures.Predator;
-import ru.javarush.island.creatures.prey.Sheep;
-
-import java.util.HashMap;
-import java.util.Map;
+import ru.javarush.island.creatures.Population;
+import ru.javarush.island.core.Settings;
 
 
 public class Wolf extends Predator {

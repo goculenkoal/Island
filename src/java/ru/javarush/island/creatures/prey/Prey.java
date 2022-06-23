@@ -1,10 +1,10 @@
-package ru.javarush.island.creatures;
+package ru.javarush.island.creatures.prey;
 
-import ru.javarush.island.Cell;
+import ru.javarush.island.island.Cell;
+import ru.javarush.island.creatures.Animal;
 import ru.javarush.island.creatures.flora.Plant;
 
 import java.util.List;
-import java.util.Map;
 
 public class Prey extends Animal {
 
