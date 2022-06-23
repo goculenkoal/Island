@@ -32,7 +32,7 @@ public class CollectStatistics {
             }
 
         }
-        System.out.println("[ " +collectAnimalPlantStats + " ]");
+        System.out.print("[ " +collectAnimalPlantStats + " ]");
 
     }
 

@@ -24,9 +24,4 @@ public class Prey extends Animal {
         }
 
     }
-
-    @Override
-    public void eatTest() {
-        System.out.println("Травоядный поел");
-    }
 }

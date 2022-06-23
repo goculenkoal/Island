@@ -6,9 +6,11 @@ import ru.javarush.island.island.Island;
 public class Main {
     public static void main(String[] args) {
         Island map = new Island();
-        SimulateLifeActions lifeActions = new SimulateLifeActions(map);
-        lifeActions.initialiseIsland();
-        lifeActions.run();
+
+//        SimulateLifeActions simulateLifeActions = new SimulateLifeActions();
+//        simulateLifeActions.initialiseIsland();
+//        simulateLifeActions.
+
 
 
 

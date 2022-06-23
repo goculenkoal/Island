@@ -12,7 +12,6 @@ public abstract class Animal extends Island {
     // Скорость перемещения, не более чем, клеток за ход
     private double saturation; //Сытость
     private int movesForDead; //Сколько ходов (тактов) животное может жить после падения шкалы сытости до нуля
-    private static int allAnimalCount;
     private Map<String, Integer> huntMenu;// счетчик типа
 
 
@@ -21,9 +20,8 @@ public abstract class Animal extends Island {
     private final int maxPopulationOnCell; // Максимальное количество животных этого вида на одной клетке
     private int moveSpeed;
     private boolean isMoved;
-    private int test;
     String picture;
-    Cell position;
+
 
 
     public Population getType() {
@@ -51,21 +49,6 @@ public abstract class Animal extends Island {
         this.movesForDead = movesForDead;
     }
 
-    public Animal(int maxPopulation, int moveSpeed, String picture, Map<String,Integer> huntMenu, double saturation,
-                  int movesForDead, double weight) { //конструктор с Меню
-
-
-        this.maxPopulationOnCell = maxPopulation;
-        this.moveSpeed = moveSpeed;
-        this.picture = picture;
-        this.huntMenu = huntMenu;
-        this.saturation = saturation;
-        this.movesForDead = movesForDead;
-        this.weight = weight;
-
-        allAnimalCount++;
-
-    }
 
     public Animal(int maxPopulation, int moveSpeed, String picture,double saturation,int movesForDead,double weight) { //конструктор с Меню
         this.maxPopulationOnCell = maxPopulation;
@@ -76,8 +59,20 @@ public abstract class Animal extends Island {
         this.weight = weight;
     }
 
-    public Cell getPosition() {
-        return position;
+    /**
+     *
+     * @param maxPopulation количество на клетке
+     * @param moveSpeed макс передвижение на
+     * @param picture эмоджи
+     * @param huntMenu меню охоты
+     * @param saturation насыщение
+     * @param movesForDead количество тиков до смерти
+     * @param weight вес
+     */
+    public Animal(int maxPopulation, int moveSpeed, String picture, Map<String,Integer> huntMenu, double saturation,
+                  int movesForDead, double weight) {
+        this(maxPopulation,moveSpeed,picture,saturation,movesForDead,weight);
+        this.huntMenu = huntMenu;
     }
 
     public int getMoveSpeed() {
@@ -101,9 +96,6 @@ public abstract class Animal extends Island {
     }
 
     public abstract void eat(Cell cell);
-    public abstract void eatTest();
-
-
 }
 
 

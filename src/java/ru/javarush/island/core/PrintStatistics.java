@@ -3,16 +3,18 @@ package ru.javarush.island.core;
 import ru.javarush.island.island.Island;
 
 public class PrintStatistics implements Runnable {
-    private Island map;
+    private final Island map;
+    CollectStatistics collectStatistics;
 
-    public PrintStatistics(Island map) {
+    public PrintStatistics(Island map, CollectStatistics collectStatistics) {
         this.map = map;
+        this.collectStatistics = collectStatistics;
     }
-
-    CollectStatistics collectStatistics = new CollectStatistics(map);
 
     @Override
     public void run() {
-
+        System.out.println("Статистика: ");
+        collectStatistics.StatisticsViewer();
+        System.out.println();
     }
 }

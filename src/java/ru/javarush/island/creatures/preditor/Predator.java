@@ -29,7 +29,7 @@ public abstract class Predator extends Animal {
                 for (Animal searchPrey : cell.getAllAnimalInCell()) { //ищем жертву на клетке
                     if (searchPrey.getClass().getSimpleName().equals(animalToEat)) {
                         this.setMovesForDead(this.type.getMoveForDead());
-                        this.setSaturation(this.getSaturation() + searchPrey.getWeight());
+                        this.setSaturation(this.getSaturation() + 1);
                         cell.deleteAnimal(searchPrey);
                         break;
                     }
@@ -54,14 +54,5 @@ public abstract class Predator extends Animal {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
         return listOfHunts;
-    }
-
-
-    /**
-     * тестовая еда - удалить
-     */
-    @Override
-    public void eatTest() {
-        System.out.println("Хищник поел");
     }
 }
