@@ -20,13 +20,11 @@ public class MainTest {
         island.builtIsland();
         island.fillupd();
 
-        ScheduledExecutorService sesStatictic = Executors.newScheduledThreadPool(1);
+        ScheduledExecutorService sesStatistic = Executors.newScheduledThreadPool(1);
         ScheduledExecutorService sesSimulateLife = Executors.newScheduledThreadPool(2);
 
 
-        ScheduledFuture<?> sF = sesStatictic.scheduleAtFixedRate(printStatistics, 0, 1, TimeUnit.SECONDS);
+        ScheduledFuture<?> sF = sesStatistic.scheduleAtFixedRate(printStatistics, 0, 1, TimeUnit.SECONDS);
         ScheduledFuture<?> simulateLife = sesSimulateLife.scheduleAtFixedRate(lifeActions, 0, 1, TimeUnit.SECONDS);
-
-
     }
 }

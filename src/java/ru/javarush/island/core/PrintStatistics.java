@@ -13,7 +13,8 @@ public class PrintStatistics implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Статистика: ");
+        System.out.println();
+        System.out.print("Статистика: ");
         collectStatistics.StatisticsViewer();
         System.out.println();
     }

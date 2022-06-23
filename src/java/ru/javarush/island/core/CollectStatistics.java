@@ -33,7 +33,6 @@ public class CollectStatistics {
 
         }
         System.out.print("[ " +collectAnimalPlantStats + " ]");
-
     }
 
 

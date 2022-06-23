@@ -6,16 +6,15 @@ public class Deer extends Prey {
 
 
     public Deer() {
-        super(Population.DEER.getMaxPopulationOnCell(),Population.DEER.getMoveSpeed(), Population.DEER.getPicture(),
-                Population.DEER.getMaxSaturation(), Population.DEER.getMoveForDead(), Population.DEER.getWeight());
+        super(Population.DEER.getMaxPopulationOnCell(),Population.DEER.getMoveSpeed(), 0.0,
+                Population.DEER.getMoveForDead(), Population.DEER.getWeight());
         this.type = Population.DEER;
     }
 
 
     @Override
     public String toString() {
-        //return "\uD83D\uDC11";
-        return "\uD83E\uDD8C";
+        return Population.DEER.getPicture();
     }
 
 }

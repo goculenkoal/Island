@@ -31,13 +31,15 @@ public class SimulateLifeActions implements Runnable {
             for (int y = 0; y < map.getWIDTH(); y++) {
                 Cell cell = map.getIslandMap()[x][y];
 
-                   movementFauna.doMove(cell);
+
                    animalEating.eatAllAnimals(cell);
+                   movementFauna.doMove(cell);
                    reproductionFauna.multiply(cell);
                    cell.generatePlants();
                    cell.resetWalkStatus(cell);
             }
         }
+        System.out.println("Turn " + getId());
         map.islandViewer();
     }
 }

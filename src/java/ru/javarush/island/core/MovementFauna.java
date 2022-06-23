@@ -5,6 +5,7 @@ import ru.javarush.island.island.Island;
 import ru.javarush.island.creatures.Animal;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MovementFauna {
     /**
@@ -12,11 +13,17 @@ public class MovementFauna {
      */
     private Island map;
 
+
+
     /** Передача в конструктор движения животных карты острова*/
     public MovementFauna(Island map) {
         this.map = map;
     }
 
+    /**
+     * Движение всех животных в ячейке
+     * @param cell - ячейка острова
+     */
     public void doMove(Cell cell) {
                 int x = cell.getAxisX();
                 int y = cell.getAxisY();
@@ -24,8 +31,8 @@ public class MovementFauna {
                 if (!listAnimal.isEmpty()) {
                     for (Animal animal : listAnimal) {
                         while (!animal.isMoved() && animal.getMoveSpeed() != 0) {
-                            int speed = new Random().nextInt(animal.getMoveSpeed() + 1);
-                            int direction = new Random().nextInt(5);
+                            int speed = ThreadLocalRandom.current().nextInt(animal.getMoveSpeed() + 1);
+                            int direction = ThreadLocalRandom.current().nextInt(5);
 
                             if (speed <= 0) {
                                 animal.setIsMoved(true);
@@ -33,7 +40,7 @@ public class MovementFauna {
 
                             }
 
-                            if (direction == 1) { //вниз
+                            if (direction == Settings.DOWN) {
                                 if (x + speed < map.getHEIGHT() - 1) {
                                     Cell newCell = map.getIslandMap()[x + speed][y];
                                     if(newCell.getCountAnimalInCell(animal) < animal.getMaxPopulationOnCell()) {
@@ -44,7 +51,7 @@ public class MovementFauna {
 
                                 }
                             }
-                            if (direction == 2) { // вверх
+                            if (direction == Settings.UP) { // вверх
                                 if (x - speed > 0) {
                                     Cell newCell = map.getIslandMap()[x - speed][y];
                                     if(newCell.getCountAnimalInCell(animal) < animal.getMaxPopulationOnCell()) {
@@ -54,7 +61,7 @@ public class MovementFauna {
                                     }
                                 }
                             }
-                            if (direction == 3) { //вправо
+                            if (direction == Settings.RIGHT) { //вправо
                                 if (y + speed < map.getWIDTH() - 1) {
                                     Cell newCell = map.getIslandMap()[x][y + speed];
                                     if(newCell.getCountAnimalInCell(animal) < animal.getMaxPopulationOnCell()) {
@@ -64,7 +71,7 @@ public class MovementFauna {
                                     }
                                 }
                             }
-                            if (direction == 4) { //влево
+                            if (direction == Settings.LEFT) { //влево
                                 if (y - speed > 0) {
                                     Cell newCell = map.getIslandMap()[x][y - speed];
                                     if(newCell.getCountAnimalInCell(animal) < animal.getMaxPopulationOnCell()) {
@@ -77,11 +84,6 @@ public class MovementFauna {
                         }
                     }
                 }
-            }
-        }
-//переписать- животные ходят только один раз за все время
-//  case MOVE -> {
-//                            lifeCycleExecutor.movingAnimals(animalList);
-//                            lifeCycleExecutor.resetWalkStatus(animalList);
-//                        }
+    }
+}
 
