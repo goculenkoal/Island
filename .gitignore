@@ -3,7 +3,7 @@
 
 # Idea structure package files
 *.idea
-out
+
 
 # Log file
 *.log
