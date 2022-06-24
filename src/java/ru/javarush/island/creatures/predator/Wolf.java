@@ -2,6 +2,7 @@ package ru.javarush.island.creatures.predator;
 
 import ru.javarush.island.creatures.Population;
 import ru.javarush.island.core.Settings;
+import ru.javarush.island.creatures.abstracts.Predator;
 
 
 public class Wolf extends Predator {

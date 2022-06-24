@@ -1,7 +1,7 @@
-package ru.javarush.island.creatures.prey;
+package ru.javarush.island.creatures.abstracts;
 
 import ru.javarush.island.island.Cell;
-import ru.javarush.island.creatures.Animal;
+import ru.javarush.island.creatures.abstracts.Animal;
 import ru.javarush.island.creatures.flora.Plant;
 import java.util.List;
 

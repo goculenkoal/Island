@@ -9,8 +9,8 @@ public class Settings {
     public static final int RIGHT = 3;
     public static final int LEFT = 4;
 
-    public static final int WIDTH = 3; //10
-    public static final int HEIGHT = 3;
+    public static final int WIDTH = 100;
+    public static final int HEIGHT = 20;
 
     public static final Map<String, Integer> menuWolf = new HashMap<>();
     public static final Map<String, Integer> menuAnaconda = new HashMap<>();
@@ -54,7 +54,5 @@ public class Settings {
         menuEagle.put("Rabbit", 90);
         menuEagle.put("Mouse", 90);
         menuEagle.put("Duck", 80);
-
     }
-
 }

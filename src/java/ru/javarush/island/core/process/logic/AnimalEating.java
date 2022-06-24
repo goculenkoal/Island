@@ -1,7 +1,7 @@
-package ru.javarush.island.core;
+package ru.javarush.island.core.process.logic;
 
 import ru.javarush.island.island.Cell;
-import ru.javarush.island.creatures.Animal;
+import ru.javarush.island.creatures.abstracts.Animal;
 
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package ru.javarush.island.creatures.prey;
 
 import ru.javarush.island.creatures.Population;
+import ru.javarush.island.creatures.abstracts.Prey;
 
 public class Deer extends Prey {
 

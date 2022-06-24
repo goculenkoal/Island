@@ -1,8 +1,8 @@
-package ru.javarush.island.core;
+package ru.javarush.island.core.process.logic;
 
 import ru.javarush.island.island.Cell;
 import ru.javarush.island.island.Island;
-import ru.javarush.island.creatures.Animal;
+import ru.javarush.island.creatures.abstracts.Animal;
 
 import java.util.Collection;
 import java.util.List;
@@ -18,21 +18,24 @@ public class ReproductionFauna {
         this.map = map;
     }
 
-
-    public void multiply(Cell cell) { // Здесь размножаемся по четному числу особей
+    /**
+     * Размножение по четному количеству животных, если общее количество нечетное, одно животное удаляется из списка, т.к не найдет пару для размножения
+     * //приделать зависимость размножения от сытости - сытость больше половины - > размножаемся
+     * @param cell на вход ячейка с животными
+     */
+    public void multiply(Cell cell) {
 
         List<Animal> tempAnimalList = new CopyOnWriteArrayList<>(List.copyOf(cell.getAllAnimalInCell())); // получаем список животных из ячейки
 
 
         for (Animal animal : tempAnimalList) {
-            //System.out.println(animal.getPosition());
-            if (getCountOfSpecies(animal, tempAnimalList) == animal.getMaxPopulationOnCell()) {
+            if (getCountOfAnimals(animal, tempAnimalList) == animal.getMaxPopulationOnCell()) {
                 continue;
             }
 
-            if (getCountOfSpecies(animal, tempAnimalList) >= 2) {
+            if (getCountOfAnimals(animal, tempAnimalList) >= 2) {
 
-                if ((getCountOfSpecies(animal, tempAnimalList) % 2 != 0)) {
+                if ((getCountOfAnimals(animal, tempAnimalList) % 2 != 0)) {
                     tempAnimalList.remove(animal);
                     continue;
                 }
@@ -47,8 +50,13 @@ public class ReproductionFauna {
 
     }
 
-
-    private int getCountOfSpecies (Animal animal, List <Animal> animals) { // Подсчет числа особей
+    /**
+     *
+     * @param animal - животное которое считаем
+     * @param animals - список животных ячеек, в котором проводим подсчет
+     * @return сумма животных определенного типа среди animal
+     */
+    private int getCountOfAnimals(Animal animal, List <Animal> animals) {
 
         Map<Object, Integer> collect = Stream.of(animals)
                 .flatMap(Collection::stream)
@@ -57,4 +65,3 @@ public class ReproductionFauna {
     }
 }
 
-//приделать зависимость размножения от сытости - сытость больше половины - > размножаемся

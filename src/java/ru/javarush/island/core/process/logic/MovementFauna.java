@@ -1,8 +1,9 @@
-package ru.javarush.island.core;
+package ru.javarush.island.core.process.logic;
 
+import ru.javarush.island.core.Settings;
 import ru.javarush.island.island.Cell;
 import ru.javarush.island.island.Island;
-import ru.javarush.island.creatures.Animal;
+import ru.javarush.island.creatures.abstracts.Animal;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,9 +13,6 @@ public class MovementFauna {
      * Поле карта острова для передвижения
      */
     private Island map;
-
-
-
     /** Передача в конструктор движения животных карты острова*/
     public MovementFauna(Island map) {
         this.map = map;
@@ -51,7 +49,7 @@ public class MovementFauna {
 
                                 }
                             }
-                            if (direction == Settings.UP) { // вверх
+                            if (direction == Settings.UP) {
                                 if (x - speed > 0) {
                                     Cell newCell = map.getIslandMap()[x - speed][y];
                                     if(newCell.getCountAnimalInCell(animal) < animal.getMaxPopulationOnCell()) {
@@ -61,7 +59,7 @@ public class MovementFauna {
                                     }
                                 }
                             }
-                            if (direction == Settings.RIGHT) { //вправо
+                            if (direction == Settings.RIGHT) {
                                 if (y + speed < map.getWIDTH() - 1) {
                                     Cell newCell = map.getIslandMap()[x][y + speed];
                                     if(newCell.getCountAnimalInCell(animal) < animal.getMaxPopulationOnCell()) {
@@ -71,7 +69,7 @@ public class MovementFauna {
                                     }
                                 }
                             }
-                            if (direction == Settings.LEFT) { //влево
+                            if (direction == Settings.LEFT) {
                                 if (y - speed > 0) {
                                     Cell newCell = map.getIslandMap()[x][y - speed];
                                     if(newCell.getCountAnimalInCell(animal) < animal.getMaxPopulationOnCell()) {

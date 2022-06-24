@@ -1,7 +1,7 @@
 package ru.javarush.island.island;
 
 import ru.javarush.island.core.Settings;
-import ru.javarush.island.creatures.Animal;
+import ru.javarush.island.creatures.abstracts.Animal;
 import ru.javarush.island.creatures.Population;
 import ru.javarush.island.creatures.predator.*;
 import ru.javarush.island.creatures.prey.*;
@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Island extends Cell {
+public class Island {
 
 
     /**
@@ -37,14 +37,10 @@ public class Island extends Cell {
      * инициализация размера острова по умолчанию
      */
     public Island() {
-        super();
         islandMap = new Cell[height][width];
     }
 
-    public Island(int x, int y) {
-        super(x,y);
-        islandMap = new Cell[x][y];
-    }
+
     /** Возврат ячейки по координатам*/
     public Cell[][] getIslandMap() {
         return islandMap;
@@ -61,7 +57,7 @@ public class Island extends Cell {
         }
     }
 
-    public void fillupd() {
+    public void CreateAnimalsOnIsland() {
         for (int x = 0; x < height; x++) {
             for (int y = 0; y < width; y++) {
                 Cell cell = islandMap[x][y];

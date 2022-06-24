@@ -1,5 +1,6 @@
-package ru.javarush.island.creatures;
+package ru.javarush.island.creatures.abstracts;
 
+import ru.javarush.island.creatures.Population;
 import ru.javarush.island.island.Cell;
 import ru.javarush.island.island.Island;
 
@@ -8,7 +9,7 @@ import java.util.Map;
 /**
  * Абстрактный класс для всех животных: хищников и травоядных
  */
-public abstract class Animal extends Island {
+public abstract class Animal {
 
     public Population type;
     private final int maxPopulationOnCell;
