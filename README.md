@@ -29,9 +29,9 @@ ANACONDA(maxPopulationOnCell:30, movespeed:1, maxSaturation: 3, weight 15, moveF
 
  ## Примеры выполнения с размером острова 3*3
  ### Результат работы 1-2 ход
- ![](src/java/ru/javarush/island/doc/img/Result of work-turn 1-2.jpg)
+![Image text](https://github.com/goculenkoal/Island/blob/dev/src/java/ru/javarush/island/doc/img/Result%20of%20work-turn%201-2.jpg)
 ### Результат работы на 15-16 ход
- ![](src/java/ru/javarush/island/doc/img/Result of work turn 15-16.jpg)
+![Image text](https://github.com/goculenkoal/Island/blob/dev/src/java/ru/javarush/island/doc/img/Result%20of%20work%20turn%2015-16.jpg)
  
 
  ## Troubleshooting:
